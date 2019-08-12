@@ -12,18 +12,19 @@ class Controller extends React.Component {
     // Then pass the component () => window.play().
     // The SoundCloud stream API is not working for some reason.
 
-    // const script = document.createElement("script");
-    // script.src = "player-bundle.js";
-    // script.async = true;
-    // document.body.appendChild(script);
+    const script = document.createElement("script");
+    script.src = "player-bundle.js";
+    script.async = true;
+    document.body.appendChild(script);
   }
 
   render() {
+    console.log((this.props.currentSong["url"]));
     return (
       <div>
         <ControllerComponent 
           currentSong={this.props.currentSong} 
-          play={() => console.log("Would pass window.play() here.")} 
+          play={() => window.play(this.props.currentSong["url"])} 
           nextSong={() => this.props.nextSong()}
         />
       </div>

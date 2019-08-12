@@ -16,7 +16,7 @@ class Player extends React.Component {
   }
 
   nextSong() {
-    if (this.state.songs[0] != undefined)
+    if (this.state.songs[0] !== undefined)
     {
       this.setState({currentSong: this.state.songs[0]});
       var newSongs = this.shiftSongs();

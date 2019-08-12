@@ -1,5 +1,5 @@
 import React from 'react';
-import SoundCloudAudio from 'soundcloud-audio'
+import SoundCloudAudio from 'soundcloud-audio';
 
 class ControllerComponent extends React.Component {
   constructor() {
@@ -7,11 +7,9 @@ class ControllerComponent extends React.Component {
   }
 
   render() {
-    //const player = new SoundCloudAudio('95f22ed54a5c297b1c41f72d713623ef');
-
     return (
       <div>
-        <button onClick={() => console.log("Playing: " + this.props.currentSong["url"])}>
+        <button onClick={() => this.props.play()}>
           Play
         </button>
         <button onClick={() => console.log("Pausing: " + this.props.currentSong["url"])}>

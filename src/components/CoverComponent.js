@@ -8,7 +8,7 @@ class CoverComponent extends React.Component {
   render() {
     return (
       <div>
-        <img src={this.props.image} width="300"/>
+        <img alt="Song Cover" src={this.props.image} width="300"/>
       </div>
     );
   }

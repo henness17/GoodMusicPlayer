@@ -36,7 +36,10 @@ class Player extends React.Component {
             songs={this.state.songs}
             currentSong={this.state.currentSong}
             nextSong={() => this.nextSong()}
-            filtered={() => this.props.goodMusicApiUrl != "https://goodmusicapi.herokuapp.com/songs/"}
+            filtered={() =>
+              this.props.goodMusicApiUrl !=
+              "https://goodmusicapi.herokuapp.com/songs/"
+            }
           />
         </div>
       );

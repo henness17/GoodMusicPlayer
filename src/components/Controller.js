@@ -12,8 +12,7 @@ class Controller extends React.Component {
   componentDidMount() {
     const script = document.createElement("script");
     script.src = "player-bundle.js";
-    if (this.props.filtered)
-      script.src = "../../player-bundle.js";
+    if (this.props.filtered) script.src = "../../player-bundle.js";
     script.async = true;
     document.body.appendChild(script);
   }

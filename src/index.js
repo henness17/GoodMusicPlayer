@@ -15,8 +15,3 @@ const routing = (
 );
 
 ReactDOM.render(routing, document.getElementById("root"));
-
-const script = document.createElement("script");
-script.src = "player-bundle.js";
-script.async = true;
-document.body.appendChild(script);

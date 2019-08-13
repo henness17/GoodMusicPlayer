@@ -7,13 +7,14 @@ class ControllerComponent extends React.Component {
   }
 
   render() {
+    var playButtonText = "Play";
+    if (this.props.playing)
+      playButtonText = "Pause";
+
     return (
       <div>
-        <button onClick={() => this.props.play()}>
-          Play
-        </button>
-        <button onClick={() => console.log("Pausing: " + this.props.currentSong["url"])}>
-          Pause
+        <button onClick={() => this.props.togglePlay()}>
+          {playButtonText}
         </button>
         <button onClick={() => this.props.nextSong()}>
           >>

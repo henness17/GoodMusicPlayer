@@ -4,8 +4,10 @@ import ControllerComponent from './ControllerComponent.js'
 class Controller extends React.Component {
   constructor() {
     super();
+    this.state = {
+      playing: false
+    };
   }
-
 
   componentDidMount() {
     const script = document.createElement("script");
@@ -14,14 +16,30 @@ class Controller extends React.Component {
     document.body.appendChild(script);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.currentSong !== prevProps.currentSong) {
+      if (this.state.playing)
+        window.play(this.props.currentSong["url"]);
+      else
+        window.pause();
+    }
+  }
+
+  togglePlay() {
+    if (this.state.playing)
+      window.pause();
+    else
+      window.play(this.props.currentSong["url"]);
+    this.setState({playing: !this.state.playing});
+  }
+
   render() {
-    console.log((this.props.currentSong["url"]));
     return (
       <div>
         <ControllerComponent 
-          currentSong={this.props.currentSong} 
-          play={() => window.play(this.props.currentSong["url"])} 
+          togglePlay={() => this.togglePlay()}
           nextSong={() => this.props.nextSong()}
+          playing={this.state.playing}
         />
       </div>
     );

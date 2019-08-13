@@ -7,7 +7,7 @@ class ControllerComponent extends React.Component {
   }
 
   render() {
-    const playButtonText = "Play";
+    var playButtonText = "Play";
     if (this.props.playing) playButtonText = "Pause";
 
     return (

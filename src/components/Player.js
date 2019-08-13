@@ -36,6 +36,7 @@ class Player extends React.Component {
             songs={this.state.songs}
             currentSong={this.state.currentSong}
             nextSong={() => this.nextSong()}
+            filtered={() => this.props.goodMusicApiUrl != "https://goodmusicapi.herokuapp.com/songs/"}
           />
         </div>
       );
@@ -51,7 +52,7 @@ class Player extends React.Component {
   fetchSongs() {
     this.setState({ loading: true });
     var newSongs;
-    fetch("https://goodmusicapi.herokuapp.com/songs")
+    fetch(this.props.goodMusicApiUrl)
       .then(response => response.json())
       .then(fetchedSongs => (newSongs = fetchedSongs))
       .then(() =>

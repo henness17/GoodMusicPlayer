@@ -29,6 +29,7 @@ class PlayerComponent extends React.Component {
           <Controller
             currentSong={this.props.currentSong}
             nextSong={() => this.props.nextSong()}
+            filtered={this.props.filtered}
           />
         </div>
         <div style={rightStyle}>

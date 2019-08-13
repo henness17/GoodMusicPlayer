@@ -70,22 +70,26 @@ class Player extends React.Component {
   }
 
   shiftSongs() {
-    const songTitles = Object.keys(this.state.songs)
-      .map(key => this.state.songs[key]["title"])
-      .shift();
-    const songArtists = Object.keys(this.state.songs)
-      .map(key => this.state.songs[key]["artist"])
-      .shift();
-    const songUrls = Object.keys(this.state.songs)
-      .map(key => this.state.songs[key]["url"])
-      .shift();
-    const songArtworkUrls = Object.keys(this.state.songs)
-      .map(key => this.state.songs[key]["artwork_url"])
-      .shift();
-    const songIds = Object.keys(this.state.songs)
-      .map(key => this.state.songs[key]["_id"])
-      .shift();
-
+    const songTitles = Object.keys(this.state.songs).map(
+      key => this.state.songs[key]["title"]
+    );
+    songTitles.shift();
+    const songArtists = Object.keys(this.state.songs).map(
+      key => this.state.songs[key]["artist"]
+    );
+    songArtists.shift();
+    const songUrls = Object.keys(this.state.songs).map(
+      key => this.state.songs[key]["url"]
+    );
+    songUrls.shift();
+    const songArtworkUrls = Object.keys(this.state.songs).map(
+      key => this.state.songs[key]["artwork_url"]
+    );
+    songArtworkUrls.shift();
+    const songIds = Object.keys(this.state.songs).map(
+      key => this.state.songs[key]["_id"]
+    );
+    songIds.shift();
     const newSongs = Array(songTitles.length).fill({});
     var i = 0;
     songTitles.forEach(function() {

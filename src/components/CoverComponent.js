@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 class CoverComponent extends React.Component {
   constructor() {
@@ -8,7 +8,7 @@ class CoverComponent extends React.Component {
   render() {
     return (
       <div>
-        <img alt="Song Cover" src={this.props.image} width="300"/>
+        <img alt="Song Cover" src={this.props.image} width="300" />
       </div>
     );
   }

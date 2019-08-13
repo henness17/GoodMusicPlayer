@@ -1,5 +1,5 @@
-import React from 'react';
-import PlayerComponent from './PlayerComponent.js'
+import React from "react";
+import PlayerComponent from "./PlayerComponent.js";
 
 class Player extends React.Component {
   constructor() {
@@ -10,17 +10,16 @@ class Player extends React.Component {
       currentSong: {}
     };
   }
-  
+
   componentDidMount() {
     this.fetchSongs();
   }
 
   nextSong() {
-    if (this.state.songs[0] !== undefined)
-    {
-      this.setState({currentSong: this.state.songs[0]});
+    if (this.state.songs[0] !== undefined) {
+      this.setState({ currentSong: this.state.songs[0] });
       var newSongs = this.shiftSongs();
-      this.setState({songs: newSongs});
+      this.setState({ songs: newSongs });
     }
   }
 
@@ -30,8 +29,7 @@ class Player extends React.Component {
       justifyContent: "center"
     };
 
-    if (!this.state.loading)
-    {
+    if (!this.state.loading) {
       return (
         <div style={wrapperStyle}>
           <PlayerComponent
@@ -51,11 +49,11 @@ class Player extends React.Component {
   }
 
   fetchSongs() {
-    this.setState({loading: true});
+    this.setState({ loading: true });
     var newSongs;
     fetch("https://goodmusicapi.herokuapp.com/songs")
       .then(response => response.json())
-      .then(fetchedSongs => newSongs = fetchedSongs)
+      .then(fetchedSongs => (newSongs = fetchedSongs))
       .then(() =>
         this.setState({
           currentSong: newSongs[0],
@@ -63,35 +61,41 @@ class Player extends React.Component {
         })
       )
       .then(() => this.shiftSongs())
-      .then(shiftedSongs => 
+      .then(shiftedSongs =>
         this.setState({
           songs: shiftedSongs,
           loading: false
         })
       );
   }
-  
+
   shiftSongs() {
-    const songTitles = Object.keys(this.state.songs).map(key => this.state.songs[key]["title"]);
-    songTitles.shift();
-    const songArtists = Object.keys(this.state.songs).map(key => this.state.songs[key]["artist"]);
-    songArtists.shift();
-    const songUrls = Object.keys(this.state.songs).map(key => this.state.songs[key]["url"]);
-    songUrls.shift();
-    const songArtworkUrls = Object.keys(this.state.songs).map(key => this.state.songs[key]["artwork_url"]);
-    songArtworkUrls.shift();
-    const songIds = Object.keys(this.state.songs).map(key => this.state.songs[key]["_id"]);
-    songIds.shift();
+    const songTitles = Object.keys(this.state.songs)
+      .map(key => this.state.songs[key]["title"])
+      .shift();
+    const songArtists = Object.keys(this.state.songs)
+      .map(key => this.state.songs[key]["artist"])
+      .shift();
+    const songUrls = Object.keys(this.state.songs)
+      .map(key => this.state.songs[key]["url"])
+      .shift();
+    const songArtworkUrls = Object.keys(this.state.songs)
+      .map(key => this.state.songs[key]["artwork_url"])
+      .shift();
+    const songIds = Object.keys(this.state.songs)
+      .map(key => this.state.songs[key]["_id"])
+      .shift();
+
     const newSongs = Array(songTitles.length).fill({});
     var i = 0;
-    songTitles.forEach(function(){
+    songTitles.forEach(function() {
       newSongs[i] = {
         title: songTitles[i],
         artist: songArtists[i],
         url: songUrls[i],
         artwork_url: songArtworkUrls[i],
         _id: songIds[i]
-      }
+      };
       i++;
     });
     return newSongs;

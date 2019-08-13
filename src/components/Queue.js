@@ -1,5 +1,5 @@
-import React from 'react';
-import QueueComponent from './QueueComponent.js'
+import React from "react";
+import QueueComponent from "./QueueComponent.js";
 
 class Queue extends React.Component {
   constructor() {
@@ -9,7 +9,7 @@ class Queue extends React.Component {
   render() {
     return (
       <div>
-        <QueueComponent songs={this.props.songs}/>
+        <QueueComponent songs={this.props.songs} />
       </div>
     );
   }

@@ -1,5 +1,5 @@
-import React from 'react';
-import DetailsComponent from './DetailsComponent.js'
+import React from "react";
+import DetailsComponent from "./DetailsComponent.js";
 
 class Details extends React.Component {
   constructor() {
@@ -9,7 +9,7 @@ class Details extends React.Component {
   render() {
     return (
       <div>
-        <DetailsComponent currentSong={this.props.currentSong}/>
+        <DetailsComponent currentSong={this.props.currentSong} />
       </div>
     );
   }

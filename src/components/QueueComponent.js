@@ -10,7 +10,6 @@ class QueueComponent extends React.Component {
     return (
       <li key={key}>
         {title} - {artist}
-        <button onClick={() => window.playSnippet(url)}>Snippet</button>
       </li>
     );
   }

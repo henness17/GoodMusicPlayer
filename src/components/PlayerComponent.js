@@ -3,6 +3,8 @@ import Controller from "./Controller.js";
 import Details from "./Details.js";
 import Queue from "./Queue.js";
 import Cover from "./Cover.js";
+import SongGrid from './SongGrid.js';
+import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 
 class PlayerComponent extends React.Component {
   constructor() {
@@ -34,6 +36,9 @@ class PlayerComponent extends React.Component {
         </div>
         <div style={rightStyle}>
           <Queue songs={this.props.songs} />
+        </div>
+        <div>
+          <SongGrid />
         </div>
       </div>
     );

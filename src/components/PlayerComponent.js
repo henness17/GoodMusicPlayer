@@ -3,8 +3,9 @@ import Controller from "./Controller.js";
 import Details from "./Details.js";
 import Queue from "./Queue.js";
 import Cover from "./Cover.js";
-import SongGrid from './SongGrid.js';
+import SongGrid from "./SongGrid.js";
 import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { NOTINITIALIZED } from "dns";
 
 class PlayerComponent extends React.Component {
   constructor() {
@@ -38,7 +39,10 @@ class PlayerComponent extends React.Component {
           <Queue songs={this.props.songs} />
         </div>
         <div>
-          <SongGrid />
+          <SongGrid
+            songs={this.props.initialSongs}
+            addSongToQueue={this.props.addSongToQueue}
+          />
         </div>
       </div>
     );

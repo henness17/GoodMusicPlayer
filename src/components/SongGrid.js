@@ -9,7 +9,10 @@ class SongGrid extends React.Component {
   render() {
     return (
       <div>
-        <SongGridComponent />
+        <SongGridComponent
+          songs={this.props.songs}
+          addSongToQueue={this.props.addSongToQueue}
+        />
       </div>
     );
   }

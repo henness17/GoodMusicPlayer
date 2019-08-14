@@ -7,12 +7,15 @@ class Player extends React.Component {
     this.state = {
       loading: false,
       songs: {},
-      currentSong: {}
+      currentSong: {},
+      initialSongs: {}
     };
+    this.addSongToQueue = this.addSongToQueue.bind(this);
   }
 
   componentDidMount() {
     this.fetchSongs();
+    this.setState({ initialSongs: this.state.songs });
   }
 
   nextSong() {
@@ -20,6 +23,17 @@ class Player extends React.Component {
       this.setState({ currentSong: this.state.songs[0] });
       var newSongs = this.shiftSongs();
       this.setState({ songs: newSongs });
+    }
+  }
+
+  addSongToQueue(song) {
+    if (Object.keys(this.state.currentSong).length == 0) { 
+      this.setState({ currentSong: song })
+    } else {
+      var songs = this.state.songs;
+      var index = Object.keys(this.state.songs).length;
+      songs[index] = song;
+      this.setState({ songs: songs });
     }
   }
 
@@ -40,6 +54,8 @@ class Player extends React.Component {
               this.props.goodMusicApiUrl !=
               "https://goodmusicapi.herokuapp.com/songs/"
             }
+            initialSongs={this.state.initialSongs}
+            addSongToQueue={this.addSongToQueue}
           />
         </div>
       );
@@ -60,14 +76,7 @@ class Player extends React.Component {
       .then(fetchedSongs => (newSongs = fetchedSongs))
       .then(() =>
         this.setState({
-          currentSong: newSongs[0],
-          songs: newSongs
-        })
-      )
-      .then(() => this.shiftSongs())
-      .then(shiftedSongs =>
-        this.setState({
-          songs: shiftedSongs,
+          initialSongs: newSongs,
           loading: false
         })
       );

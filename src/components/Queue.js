@@ -7,11 +7,7 @@ class Queue extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <QueueComponent songs={this.props.songs} />
-      </div>
-    );
+    return <QueueComponent songs={this.props.songs} />;
   }
 }
 

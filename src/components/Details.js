@@ -7,11 +7,7 @@ class Details extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        <DetailsComponent currentSong={this.props.currentSong} />
-      </div>
-    );
+    return <DetailsComponent currentSong={this.props.currentSong} />;
   }
 }
 

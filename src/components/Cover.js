@@ -8,11 +8,7 @@ class Cover extends React.Component {
 
   render() {
     if (this.props.image != undefined) {
-      return (
-        <div>
-          <CoverComponent image={this.props.image} />
-        </div>
-      );
+      return <CoverComponent image={this.props.image} />;
     } else {
       return <div></div>;
     }

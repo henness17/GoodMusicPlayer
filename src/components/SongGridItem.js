@@ -8,14 +8,12 @@ class SongGridItem extends React.Component {
 
   render() {
     return (
-      <div>
-        <SongGridItemComponent
-          song={this.props.song}
-          onMouseOver={this.props.onMouseOver}
-          onMouseOut={this.props.onMouseOut}
-          addSongToQueue={this.props.addSongToQueue}
-        />
-      </div>
+      <SongGridItemComponent
+        song={this.props.song}
+        onMouseOver={this.props.onMouseOver}
+        onMouseOut={this.props.onMouseOut}
+        addSongToQueue={this.props.addSongToQueue}
+      />
     );
   }
 }

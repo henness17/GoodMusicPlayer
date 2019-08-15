@@ -33,11 +33,11 @@ class Controller extends React.Component {
 
   render() {
     return (
-        <ControllerComponent
-          togglePlay={this.togglePlay}
-          nextSong={this.props.nextSong}
-          playing={this.state.playing}
-        />
+      <ControllerComponent
+        togglePlay={this.togglePlay}
+        nextSong={this.props.nextSong}
+        playing={this.state.playing}
+      />
     );
   }
 }

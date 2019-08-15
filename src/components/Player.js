@@ -39,14 +39,9 @@ class Player extends React.Component {
   }
 
   render() {
-    const wrapperStyle = {
-      display: "flex",
-      justifyContent: "center"
-    };
-
     if (!this.state.loading) {
       return (
-        <div style={wrapperStyle}>
+        <div className="wrapper">
           <PlayerComponent
             songs={this.state.songs}
             currentSong={this.state.currentSong}
@@ -62,7 +57,7 @@ class Player extends React.Component {
       );
     } else {
       return (
-        <div style={wrapperStyle}>
+        <div className="wrapper">
           <h1>Loading...</h1>
         </div>
       );

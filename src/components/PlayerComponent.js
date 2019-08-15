@@ -12,20 +12,9 @@ class PlayerComponent extends React.Component {
   }
 
   render() {
-    const leftStyle = {
-      float: "left",
-      textAlign: "center",
-      marginRight: "20px",
-      width: "350px"
-    };
-    const rightStyle = {
-      float: "left",
-      width: "500px"
-    };
-
     return (
       <div>
-        <div style={leftStyle}>
+        <div className="left">
           <Cover image={this.props.currentSong["artwork_url"]} />
           <Details currentSong={this.props.currentSong} />
           <Controller
@@ -34,7 +23,7 @@ class PlayerComponent extends React.Component {
             filtered={this.props.filtered}
           />
         </div>
-        <div style={rightStyle}>
+        <div className="right">
           <Queue songs={this.props.songs} />
         </div>
         <div>

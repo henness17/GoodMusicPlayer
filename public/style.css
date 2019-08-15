@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.left {
+  float: left;
+  text-align: center;
+  margin-right: 20px;
+  width: 350px;
+}
+
+.right {
+  float: left;
+  width: 500px;
+}
+
+.gridContainer  {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  padding: 50px;
+}
+
+.gridItem {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.8);
+  padding: 10px;
+  text-align: center;
+  height: 100px;
+  width: 100px;
+}

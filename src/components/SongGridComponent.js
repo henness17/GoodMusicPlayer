@@ -8,11 +8,6 @@ class SongGridComponent extends React.Component {
   }
 
   render() {
-    const gridContainerStyle = {
-      display: "grid",
-      gridTemplateColumns: "auto auto auto auto auto auto",
-      padding: "50px"
-    };
     const gridItems = Object.keys(this.props.songs).map(key => (
       <SongGridItem
         key={Math.random()}
@@ -22,7 +17,7 @@ class SongGridComponent extends React.Component {
         addSongToQueue={this.props.addSongToQueue}
       />
     ));
-    const grid = <div style={gridContainerStyle}>{gridItems}</div>;
+    const grid = <div className="gridContainer">{gridItems}</div>;
     return <div>{grid}</div>;
   }
 }

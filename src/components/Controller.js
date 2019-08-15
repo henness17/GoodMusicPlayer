@@ -7,6 +7,7 @@ class Controller extends React.Component {
     this.state = {
       playing: false
     };
+    this.togglePlay = this.togglePlay.bind(this);
   }
 
   componentDidMount() {
@@ -34,8 +35,8 @@ class Controller extends React.Component {
     return (
       <div>
         <ControllerComponent
-          togglePlay={() => this.togglePlay()}
-          nextSong={() => this.props.nextSong()}
+          togglePlay={this.togglePlay}
+          nextSong={this.props.nextSong}
           playing={this.state.playing}
         />
       </div>

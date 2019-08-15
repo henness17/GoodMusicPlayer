@@ -5,7 +5,6 @@ import Queue from "./Queue.js";
 import Cover from "./Cover.js";
 import SongGrid from "./SongGrid.js";
 import { Route, Link, BrowserRouter as Router } from "react-router-dom";
-import { NOTINITIALIZED } from "dns";
 
 class PlayerComponent extends React.Component {
   constructor() {
@@ -31,7 +30,7 @@ class PlayerComponent extends React.Component {
           <Details currentSong={this.props.currentSong} />
           <Controller
             currentSong={this.props.currentSong}
-            nextSong={() => this.props.nextSong()}
+            nextSong={this.props.nextSong}
             filtered={this.props.filtered}
           />
         </div>

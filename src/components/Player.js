@@ -10,6 +10,7 @@ class Player extends React.Component {
       currentSong: {},
       initialSongs: {}
     };
+    this.nextSong = this.nextSong.bind(this);
     this.addSongToQueue = this.addSongToQueue.bind(this);
   }
 
@@ -27,8 +28,8 @@ class Player extends React.Component {
   }
 
   addSongToQueue(song) {
-    if (Object.keys(this.state.currentSong).length == 0) { 
-      this.setState({ currentSong: song })
+    if (Object.keys(this.state.currentSong).length == 0) {
+      this.setState({ currentSong: song });
     } else {
       var songs = this.state.songs;
       var index = Object.keys(this.state.songs).length;
@@ -49,7 +50,7 @@ class Player extends React.Component {
           <PlayerComponent
             songs={this.state.songs}
             currentSong={this.state.currentSong}
-            nextSong={() => this.nextSong()}
+            nextSong={this.nextSong}
             filtered={() =>
               this.props.goodMusicApiUrl !=
               "https://goodmusicapi.herokuapp.com/songs/"

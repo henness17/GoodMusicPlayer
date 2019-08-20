@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import ControllerComponent from "./ControllerComponent.js";
 
 class Controller extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       playing: false
     };

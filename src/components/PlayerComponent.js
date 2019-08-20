@@ -5,13 +5,8 @@ import Details from "./Details.js";
 import Queue from "./Queue.js";
 import Cover from "./Cover.js";
 import SongGrid from "./SongGrid.js";
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
 
 class PlayerComponent extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <div>

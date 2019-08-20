@@ -2,10 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class QueueComponent extends React.Component {
-  constructor() {
-    super();
-  }
-
   renderQueueItem(title, artist, url) {
     const key = title + artist;
     return (

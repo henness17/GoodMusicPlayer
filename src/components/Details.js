@@ -3,10 +3,6 @@ import PropTypes from "prop-types";
 import DetailsComponent from "./DetailsComponent.js";
 
 class Details extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return <DetailsComponent currentSong={this.props.currentSong} />;
   }

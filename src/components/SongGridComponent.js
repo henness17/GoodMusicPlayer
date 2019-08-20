@@ -1,13 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SongGrid from "./SongGrid";
 import SongGridItem from "./SongGridItem";
 
 class SongGridComponent extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     const gridItems = Object.keys(this.props.songs).map(key => (
       <SongGridItem

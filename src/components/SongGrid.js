@@ -3,10 +3,6 @@ import PropTypes from "prop-types";
 import SongGridComponent from "./SongGridComponent.js";
 
 class SongGrid extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return (
       <SongGridComponent

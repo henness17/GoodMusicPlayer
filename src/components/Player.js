@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import PlayerComponent from "./PlayerComponent.js";
 
 class Player extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       loading: false,
       songs: {},
@@ -29,7 +29,7 @@ class Player extends React.Component {
   }
 
   addSongToQueue(song) {
-    if (Object.keys(this.state.currentSong).length == 0) {
+    if (Object.keys(this.state.currentSong).length === 0) {
       this.setState({ currentSong: song });
     } else {
       var songs = this.state.songs;
@@ -48,7 +48,7 @@ class Player extends React.Component {
             currentSong={this.state.currentSong}
             nextSong={this.nextSong}
             filtered={() =>
-              this.props.goodMusicApiUrl !=
+              this.props.goodMusicApiUrl !==
               "https://goodmusicapi.herokuapp.com/songs/"
             }
             initialSongs={this.state.initialSongs}

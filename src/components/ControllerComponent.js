@@ -1,12 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import SoundCloudAudio from "soundcloud-audio";
 
 class ControllerComponent extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     var playButtonText = "Play";
     if (this.props.playing) playButtonText = "Pause";

@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 class SongGridItemComponent extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       className: "gridItem"
     };
@@ -20,9 +20,10 @@ class SongGridItemComponent extends React.Component {
   }
 
   render() {
-    if (this.props.song != undefined) {
+    if (this.props.song !== undefined) {
       return (
         <img
+          alt="Artwork"
           className={this.state.className}
           src={this.props.song["artwork_url"]}
           onMouseOver={() => this.mouseOver()}

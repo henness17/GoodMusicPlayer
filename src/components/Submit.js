@@ -2,8 +2,8 @@ import React from "react";
 import SubmitComponent from "./SubmitComponent.js";
 
 class Submit extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       title: "",
       artist: "",

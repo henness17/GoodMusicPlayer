@@ -3,10 +3,6 @@ import PropTypes from "prop-types";
 import QueueComponent from "./QueueComponent.js";
 
 class Queue extends React.Component {
-  constructor() {
-    super();
-  }
-
   render() {
     return <QueueComponent songs={this.props.songs} />;
   }

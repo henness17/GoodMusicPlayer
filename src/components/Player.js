@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import PlayerComponent from "./PlayerComponent.js";
 
 class Player extends React.Component {
@@ -114,5 +115,9 @@ class Player extends React.Component {
     return newSongs;
   }
 }
+
+Player.propTypes = {
+  goodMusicApiUrl: PropTypes.string.isRequired
+};
 
 export default Player;

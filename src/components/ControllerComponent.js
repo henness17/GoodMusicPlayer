@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import SoundCloudAudio from "soundcloud-audio";
 
 class ControllerComponent extends React.Component {
@@ -20,5 +21,11 @@ class ControllerComponent extends React.Component {
     );
   }
 }
+
+ControllerComponent.propTypes = {
+  togglePlay: PropTypes.func.isRequired,
+  nextSong: PropTypes.func.isRequired,
+  playing: PropTypes.bool.isRequired
+};
 
 export default ControllerComponent;

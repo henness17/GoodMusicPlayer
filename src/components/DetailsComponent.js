@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class DetailsComponent extends React.Component {
   constructor() {
@@ -14,5 +15,9 @@ class DetailsComponent extends React.Component {
     );
   }
 }
+
+DetailsComponent.propTypes = {
+  currentSong: PropTypes.object.isRequired
+};
 
 export default DetailsComponent;

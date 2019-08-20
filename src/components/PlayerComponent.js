@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import Controller from "./Controller.js";
 import Details from "./Details.js";
 import Queue from "./Queue.js";
@@ -36,5 +37,15 @@ class PlayerComponent extends React.Component {
     );
   }
 }
+
+PlayerComponent.propTypes = {
+  songs: PropTypes.object.isRequired,
+  currentSong: PropTypes.object.isRequired,
+  nextSong: PropTypes.func.isRequired,
+  filtered: PropTypes.func.isRequired,
+  initialSongs: PropTypes.oneOfType([PropTypes.array, PropTypes.object])
+    .isRequired,
+  addSongToQueue: PropTypes.func.isRequired
+};
 
 export default PlayerComponent;

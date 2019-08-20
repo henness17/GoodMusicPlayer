@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import SongGrid from "./SongGrid";
 import SongGridItem from "./SongGridItem";
 
@@ -21,5 +22,10 @@ class SongGridComponent extends React.Component {
     return <div>{grid}</div>;
   }
 }
+
+SongGridComponent.propTypes = {
+  songs: PropTypes.oneOfType([PropTypes.array, PropTypes.object]).isRequired,
+  addSongToQueue: PropTypes.func.isRequired
+};
 
 export default SongGridComponent;

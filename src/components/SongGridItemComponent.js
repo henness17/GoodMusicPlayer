@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class SongGridItemComponent extends React.Component {
   constructor() {
@@ -34,5 +35,12 @@ class SongGridItemComponent extends React.Component {
     }
   }
 }
+
+SongGridItemComponent.propTypes = {
+  song: PropTypes.object.isRequired,
+  onMouseOver: PropTypes.func.isRequired,
+  onMouseOut: PropTypes.func.isRequired,
+  addSongToQueue: PropTypes.func.isRequired
+};
 
 export default SongGridItemComponent;

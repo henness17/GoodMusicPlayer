@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class CoverComponent extends React.Component {
   constructor() {
@@ -13,5 +14,9 @@ class CoverComponent extends React.Component {
     );
   }
 }
+
+CoverComponent.propTypes = {
+  image: PropTypes.string
+};
 
 export default CoverComponent;

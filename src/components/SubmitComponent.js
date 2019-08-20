@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class SubmitComponent extends React.Component {
   constructor() {
@@ -55,5 +56,14 @@ class SubmitComponent extends React.Component {
     );
   }
 }
+
+SubmitComponent.propTypes = {
+  title: PropTypes.string.isRequired,
+  artist: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  artwork_url: PropTypes.string.isRequired,
+  handleChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
+};
 
 export default SubmitComponent;

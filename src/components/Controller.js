@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import ControllerComponent from "./ControllerComponent.js";
 
 class Controller extends React.Component {
@@ -41,5 +42,11 @@ class Controller extends React.Component {
     );
   }
 }
+
+Controller.propTypes = {
+  currentSong: PropTypes.object.isRequired,
+  nextSong: PropTypes.func.isRequired,
+  filtered: PropTypes.func.isRequired
+};
 
 export default Controller;

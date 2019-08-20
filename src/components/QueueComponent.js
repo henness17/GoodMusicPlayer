@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 class QueueComponent extends React.Component {
   constructor() {
@@ -25,5 +26,9 @@ class QueueComponent extends React.Component {
     return <div>{queueItems}</div>;
   }
 }
+
+QueueComponent.propTypes = {
+  songs: PropTypes.object.isRequired
+};
 
 export default QueueComponent;

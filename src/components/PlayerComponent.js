@@ -5,6 +5,7 @@ import Details from "./Details.js";
 import Queue from "./Queue.js";
 import Cover from "./Cover.js";
 import SongGrid from "./SongGrid.js";
+import SomeButton from "./SomeButton.js";
 
 class PlayerComponent extends React.Component {
   render() {
@@ -27,6 +28,7 @@ class PlayerComponent extends React.Component {
             songs={this.props.initialSongs}
             addSongToQueue={this.props.addSongToQueue}
           />
+          <SomeButton></SomeButton>
         </div>
       </div>
     );

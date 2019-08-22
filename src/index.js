@@ -1,8 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import { Route, BrowserRouter as Router } from "react-router-dom";
 import App from "./components/App.js";
 import Submit from "./components/Submit.js";
-import { Route, BrowserRouter as Router } from "react-router-dom";
 
 const routing = (
   <Router>
@@ -16,4 +18,9 @@ const routing = (
   </Router>
 );
 
-ReactDOM.render(routing, document.getElementById("root"));
+ReactDOM.render(
+  <Provider store={store}>
+    {routing}
+  </Provider>, 
+  document.getElementById("root")
+);

@@ -1,14 +1,13 @@
 import React from "react";
 import { connect } from "react-redux";
 import { setStatus } from "../redux/actions.js";
-import { STATUS } from "../constants.js";
 
 class SomeButton extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={() => this.props.setStatus(STATUS.COMPLETED)}>
-          Complete me... { this.props.somePropName }
+        <button onClick={() => this.props.setStatus()}>
+          Click me... { this.props.somePropName }
         </button>
       </div>
     );

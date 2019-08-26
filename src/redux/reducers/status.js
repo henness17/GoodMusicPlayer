@@ -1,12 +1,12 @@
 import { SET_STATUS } from "../actionTypes.js";
-import { STATUS } from "../../constants.js";
 
-const initialState = STATUS.INCOMPLETE;
+const initialState = 100;
+var count = initialState;
 
 function status(state = initialState, action) {
   switch (action.type) {
     case SET_STATUS: {
-      return action.payload.status;
+      return ++count;
     }
     default: {
       return state;
